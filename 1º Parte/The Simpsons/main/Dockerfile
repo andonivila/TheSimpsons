@@ -1,4 +1,14 @@
-FROM python:3.9
-WORKDIR .
-COPY maggie_level.py .
-CMD ["python", "maggie_level"]
+FROM python:3.7.9
+
+COPY ./maggie_level.py /app/
+COPY requirements.txt /app/
+
+WORKDIR /app/ 
+
+RUN mkdir /Lisa
+RUN mkdir /Homer
+RUN mkdir /General
+
+RUN pip3 install -r requirements.txt
+
+CMD ["python","maggie_level.py"]
