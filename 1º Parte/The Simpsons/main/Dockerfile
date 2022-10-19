@@ -9,6 +9,6 @@ RUN mkdir /Lisa
 RUN mkdir /Homer
 RUN mkdir /General
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r ./requirements.txt
 
 CMD ["python","maggie_level.py"]
