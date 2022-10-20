@@ -19,3 +19,8 @@ def frecuencia_palabras (texto):
     for palabra in diccionario_frecuencias:
         frecuencia = diccionario_frecuencias[palabra]
         print(f"La palabra '{palabra}' tiene una frecuencia de {frecuencia}")
+
+
+texto='La casa de mi abuela es una casa que esta en zamora en concreto en un pueblo de zamora en castilla y leon'
+
+frecuencia_palabras(texto)
