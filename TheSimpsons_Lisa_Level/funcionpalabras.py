@@ -1,26 +1,37 @@
-def frecuencia_palabras (texto):
-    quitar = ",;:.\n!\"'"
+import requests
+import matplotlib.pyplot as plt
+dic={}
+i=0
+while i<2 : 
+    resp = requests.get('https://thesimpsonsquoteapi.glitch.me/quotes')
+    frase=resp.json()[0]['quote']
+    quitar = ",;:.\n!"
     for caracter in quitar:
-        texto = texto.replace(caracter,"")
+        frase = frase.replace(caracter,"")
+    
+    frase2=frase.split()
+    frase=frase2
+    
 
-    texto = texto.lower()
-    # Las palabras están separadas por un espacio así que convertimos la cadena a arreglo
-    palabras = texto.split(" ")
-
-    # Ahora vamos a contar las palabras creando un diccionario. En este caso la clave del diccionario
-    # será la palabra, y el valor será el conteo
-    diccionario_frecuencias = {}
-    for palabra in palabras:
-        if palabra in diccionario_frecuencias:
-            diccionario_frecuencias[palabra] += 1
+    for cambiante in frase:
+        if cambiante in dic:
+            dic[cambiante]+=1
         else:
-            diccionario_frecuencias[palabra] = 1
+            dic[cambiante]=1
+    
+    for cambiante in dic:
+        frecuencia = dic[cambiante]
+        print(f"La palabra '{cambiante}' tiene una frecuencia de {frecuencia}")
+    i+=1
 
-    for palabra in diccionario_frecuencias:
-        frecuencia = diccionario_frecuencias[palabra]
-        print(f"La palabra '{palabra}' tiene una frecuencia de {frecuencia}")
+keys=[]
+valores=[]
 
+for a in dic:
+ keys.append(a)
+for b in dic.values():
+    valores.append(b)
 
-texto='La casa de mi abuela es una casa que esta en zamora en concreto en un pueblo de zamora en castilla y leon'
+plt.bar(keys, height=valores)
+plt.show()
 
-frecuencia_palabras(texto)
