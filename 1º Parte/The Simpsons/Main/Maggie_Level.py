@@ -3,7 +3,7 @@ import time
 import pandas as pd
 
 while True:
-    time.sleep(1)
+    time.sleep(30)
     resp = requests.get('https://thesimpsonsquoteapi.glitch.me/quotes')
     frase=resp.json()[0]['quote']
     personaje=resp.json()[0]['character']
