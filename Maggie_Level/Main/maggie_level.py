@@ -14,12 +14,12 @@ while True:
     if personaje==Lisa:
         Lisa_Frase = {'Frase': [f'{frase}'], 'Personaje':[f'{personaje}']}
         df=pd.DataFrame(Lisa_Frase)
-        df.to_csv('C:\\Users\\Usuario\\Documents\\GitHub\\TheSimpsons\\1º Parte\\The Simpsons\\main\\lisa.csv', mode='a' , header=True, index=False)
+        df.to_csv('C:\\Users\\Usuario\\Documents\\GitHub\\TheSimpsons\\Maggie_Level\\Main\\lisa.csv', mode='a' , header=True, index=False)
     elif personaje==Homer:
         Homer_Frase = {'Frase': [f'{frase}'], 'Personaje' : [f'{personaje}']}
         df=pd.DataFrame(Homer_Frase)
-        df.to_csv('C:\\Users\\Usuario\\Documents\\GitHub\\TheSimpsons\\1º Parte\\The Simpsons\\main\\homer.csv', mode='a' , header=True, index=False)
+        df.to_csv('C:\\Users\\Usuario\\Documents\\GitHub\\TheSimpsons\\Maggie_Level\\Main\\homer.csv', mode='a' , header=True, index=False)
     else: 
         Resto_Frase = {'Frase': [f'{frase}'], 'Personaje' : [f'{personaje}']}
         df=pd.DataFrame(Resto_Frase)
-        df.to_csv('C:\\Users\\Usuario\\Documents\\GitHub\\TheSimpsons\\1º Parte\\The Simpsons\\main\\general.csv', mode='a' , header=True, index=False)
+        df.to_csv('C:\\Users\\Usuario\\Documents\\GitHub\\TheSimpsons\\Maggie_Level\\Main\\general.csv', mode='a' , header=True, index=False)
