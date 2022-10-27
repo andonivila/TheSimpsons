@@ -1,5 +1,0 @@
-docker pull ubuntu
-
---> ir a docker, ir a imagen y al correrlo poner de nombre unix 
-
-docker exec -it unix /bin/bash
