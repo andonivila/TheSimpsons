@@ -17,6 +17,7 @@ while True:
     file= (f"Esta es la foto de {personaje}.png")
 
     if not (os.path.exists(personaje)):
+       #Descargar la imagen  
         r=urllib.request.urlopen(url)
         f=open(file,'wb')
         f.write(r.read())
@@ -26,6 +27,10 @@ while True:
         shutil.move(file,personaje)
         time.sleep(0.5)
     
+    '''
+    De aqui en adelante vamos a descargar las frases
+    y contar el orden en el que van entrando
+    '''
     quitar = ",;:.\n!"
     for caracter in quitar:
         frase = frase.replace(caracter,"")
