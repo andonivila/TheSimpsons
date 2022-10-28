@@ -15,10 +15,15 @@ import shutil
 
 '''
 Creamos un diccionario vacio para guardar un contador de las palabras 
+es importante que este fuera del bucle while por que si no creariamos 
+un diccionario vacio cada vez que empezara
 
 '''
 dic={}
-i=0
+'''
+
+
+'''
 w=0
 while True:
    
@@ -67,16 +72,39 @@ while True:
         time.sleep(0.5)
     
     '''
-    De aqui en adelante vamos a descargar las frases
-    y contar el orden en el que van entrando
+    Para poder contar palabras primero tenemos que quitar
+    todo los caracteres que no nos interesan contar
+
+    Con un bucle for vamos eliminando 1 a 1 cada caracter de la variable quitar
+    tambien podriamos eliminar letras concretas si quisieramos 
     '''
     quitar = ",;:.\n!"
     for caracter in quitar:
         frase = frase.replace(caracter,"")
     
+    '''
+    Ahora con .split podemos "trocear" una frase 
+    en palabras e introducirlas en un diccionario
+    pasamos de 
+    "Esto es un codigo python" 
+    a
+    ["Esto","es","un","codigo","python"]
+
+    '''
+
     frase2=frase.split()
     frase=frase2
     
+    '''
+    Ahora introducimos este diccionario troceado
+    junto a nuesta variable contadora, la cual cuando termine el bucle
+    su valor aumentara en 1, 
+    dando como resultado
+
+    ["Esto":1 , "es":2, "un":3, "codigo":4, "python":5]
+
+    
+    '''
 
     for cambiante in frase:
         if cambiante in dic:
